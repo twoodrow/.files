@@ -25,6 +25,18 @@ Plugin 'vim-scripts/c.vim'
 " visual marker plugin
 Plugin 'kshenoy/vim-signature'
 
+" plugin for php qa
+Bundle 'joonty/vim-phpqa.git'
+
+" auto tags
+Plugin 'joonty/vim-taggatron'
+
+" Auto closing brackets
+Plugin 'Raimondi/delimitMate'
+
+" JSHint for linting
+Plugin 'amaraxmonika/jshint.vim'
+
 " The following are examples of different formats supported.
 " Keep Plugin commands between vundle#begin/end.
 " plugin on GitHub repo
@@ -63,6 +75,7 @@ syntax on
 " Indent automatically depending on filetype
 "filetype indent on
 "set autoindent
+" file type specific settings
 
 " Hightlight search
 set hls
@@ -76,6 +89,9 @@ let g:loaded_matchparen=1
 
 " Mapping keys k + j to <esc>
 inoremap kj <Esc>
+
+" setting mouse mode on
+set mouse=a
 
 " Mapping spacebar to clear current search buffer 
 :nnoremap <silent> <Space> :nohlsearch<Bar>:echo<CR>
@@ -107,3 +123,12 @@ if (exists('+colorcolumn'))
     set colorcolumn=80
     highlight ColorColumn ctermbg=9
 endif
+
+" setting paste mode
+set pastetoggle=<F2>
+
+" faster cmd mode save
+nnoremap ; :
+
+" sudo save after file is open
+cmap w!! w !sudo tee % >/dev/null
