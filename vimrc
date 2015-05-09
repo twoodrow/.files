@@ -113,7 +113,7 @@ autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 " testing new stuff here
 " ---------------------
 " set relative line position numbers
-set relativenumber
+"set relativenumber
 
 " add uppercase to insert mode
 imap <c-u> <esc> viw~ gi
@@ -132,3 +132,43 @@ nnoremap ; :
 
 " sudo save after file is open
 cmap w!! w !sudo tee % >/dev/null
+
+" adding leader key
+let maplocalleader = "\\"
+let mapleader = "-"
+
+" adding easy vimrc split edit
+nnoremap <leader>ev :vsplit $MYVIMRC<cr>
+" Toggle to next window 
+nnoremap gn <C-W><C-W>
+
+" Easy source vimrc
+nnoremap <leader>sv :source $MYVIMRC<cr>
+
+" Adding spelling correction
+iabbrev and and
+iabbrev fuction function
+iabbrev fnction function
+
+" Surround a word with double quotes
+nnoremap <leader>" viw<esc>a"<esc>hbi"<esc>lel
+nnoremap <leader>' viw<esc>a'<esc>hbi'<esc>lel
+
+" Delete inside parenthesis
+onoremap p i(
+" Delete inside code block
+onoremap b /return<cr>
+
+" Autocommands for javascript and python
+" py
+autocmd FileType python :iabbrev <buffer> iff if:<left>
+autocmd FileType javascript :iabbrev <buffer> iff if()<left>
+
+" Toggle with za
+" Vimscript file settings -------------------{{{
+augroup filetype_vim
+    autocmd!
+    autocmd FileType vim setlocal foldmethod=marker
+augroup END
+" }}}
+
