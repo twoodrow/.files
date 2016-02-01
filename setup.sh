@@ -1,5 +1,6 @@
 #!/bin/bash
 ln -s ./nvim ~/.config/nvim
+ln -s /usr/bin/nvim /usr/local/bin/nv
 
 # installing neovim
 sudo apt-get install software-properties-common
