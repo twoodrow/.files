@@ -27,7 +27,21 @@ Plug 'junegunn/seoul256.vim'
 Plug 'kien/ctrlp.vim'
 Plug 'tpope/vim-fugitive'
 Plug 'Valloric/YouCompleteMe'
+Plug 'freeo/vim-kalisi'
 call plug#end()
 
-let g:seoul256_background=233
-colo seoul256
+" colorscheme stuff
+"let g:seoul256_background=233
+"colo seoul256
+"color kalisi
+"set background=dark
+colo slate
+
+"""""" Some NERDTree setup
+" enables on startup
+autocmd vimenter * NERDTree
+" close vim when only a NERDTree tab is open
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+
+" disables mouse 'click to move to position'
+set mouse-=a
