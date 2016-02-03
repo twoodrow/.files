@@ -45,3 +45,9 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 
 " disables mouse 'click to move to position'
 set mouse-=a
+
+" code folding
+set foldmethod=indent
+set foldnestmax=2
+set nofoldenable
+set foldlevel=2
