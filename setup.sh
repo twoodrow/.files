@@ -1,5 +1,9 @@
 #!/bin/bash
-
+if [ $USER == root ]
+then
+    echo "Do not run as root";
+    exit
+fi
 # installing neovim
 sudo add-apt-repository -y ppa:neovim-ppa/unstable
 sudo apt-get update
