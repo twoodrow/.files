@@ -7,7 +7,7 @@ fi
 # installing neovim
 sudo add-apt-repository -y ppa:neovim-ppa/unstable
 sudo apt-get update
-sudo apt-get install -y software-properties-common
+sudo apt-get install -y git software-properties-common
 sudo apt-get install -y neovim
 sudo apt-get install -y python-dev python-pip python3-dev python3-pip cmake build-essential
 sudo pip install neovim
@@ -33,3 +33,7 @@ sudo update-alternatives --install /usr/bin/vim vim /usr/bin/nvim 60
 sudo update-alternatives --config vim
 sudo update-alternatives --install /usr/bin/editor editor /usr/bin/nvim 60
 sudo update-alternatives --config editor
+
+# git setup
+git config credential.helper 'cache --timeout 3600'
+
