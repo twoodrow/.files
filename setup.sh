@@ -24,7 +24,7 @@ mkdir -p $NV_DIR/autoload
 # make links
 ln -s $USER_DIR/.files/nvim/init.vim $NV_DIR/init.vim
 ln -s $USER_DIR/.files/nvim/autoload/plug.vim $NV_DIR/autoload/plug.vim
-ln -s /usr/bin/nvim /usr/local/bin/nv
+sudo ln -s /usr/bin/nvim /usr/bin/nv
 
 # use neovim instead of other editor things
 sudo update-alternatives --install /usr/bin/vi vi /usr/bin/nvim 60
